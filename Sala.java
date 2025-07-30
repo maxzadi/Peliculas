@@ -1,4 +1,3 @@
-package corto2;
 public class Sala {
     private int asientos;
     private String tipo;
