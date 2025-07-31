@@ -1,4 +1,3 @@
-import Modelo.Asiento;
 import Modelo.Sala;
 import Modelo.Peliculas;
 
