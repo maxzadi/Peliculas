@@ -9,6 +9,9 @@ public class Sala {
         this.espacio=asientos;
         this.tipo=tipo;
         this.asientos= new Asiento[asientos];
+        for(Integer i=0;i<asientos;i++){
+            this.asientos[i]=new Asiento(i.toString(),false,"limpio");
+        }
     }
 
     public Sala(int espacio, String tipo, int numero){
@@ -36,6 +39,18 @@ public class Sala {
 
     public int getNumero(){
         return numero;
+    }
+
+    public boolean comprarAsientos(Integer cantidad){
+        if(espacio-cantidad<0){
+            return false;
+        }
+        while (cantidad>0) {
+            asientos[asientos.length-espacio].sentarse();
+            espacio-=1;
+            cantidad-=1;
+        }
+        return true;
     }
 
 }

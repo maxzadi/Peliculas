@@ -1,12 +1,13 @@
 package Modelo;
 public class Peliculas {
-    private String actores;
-    private String clasificacion;
-    private String director;
-    private String nombre = "Película";
-    private int duracion;
+    public String actores;
+    public String clasificacion;
+    public String director;
+    public String nombre;
+    public int duracion;
 
-    public Peliculas(String actores, String clasificacion, String director, int duracion) {
+    public Peliculas(String pelicula,String actores, String clasificacion, String director, Integer duracion) {
+        this.nombre = nombre;
         this.actores = actores;
         this.clasificacion = clasificacion;
         this.director = director;
