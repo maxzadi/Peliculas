@@ -1,22 +1,24 @@
 package Modelo;
 public class Sala {
-    private int asientos;
-    private String tipo;
-    private int numero;
+    public Asiento[] asientos;
+    public int espacio;
+    public String tipo;
+    public int numero;
 
-    Sala(int asientos, String tipo){
-        this.asientos=asientos;
+    public Sala(int asientos, String tipo){
+        this.espacio=asientos;
         this.tipo=tipo;
+        this.asientos= new Asiento[asientos];
     }
 
-    Sala(int asientos, String tipo, int numero){
-        this.asientos=asientos;
+    public Sala(int espacio, String tipo, int numero){
+        this.espacio=espacio;
         this.tipo=tipo;
         this.numero=numero;
     }
 
     public int cantidadAsientos(){
-        return asientos;
+        return espacio;
     }
 
     public String tipoFuncion(){
