@@ -9,7 +9,9 @@ public class CineControlador {
 
     public CineControlador(Integer uno, Integer dos){
         this.cantidadSalas=uno;
+        salas= new Sala[this.cantidadSalas];
         this.cantidadPeliculas=dos;
+        peliculas= new Peliculas[this.cantidadPeliculas];
     }
 
     public Boolean crearSala(Integer espacio, String tipo, Integer numero){
