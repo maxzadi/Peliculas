@@ -14,11 +14,11 @@ public class CineControlador {
         peliculas= new Peliculas[this.cantidadPeliculas];
     }
 
-    public Boolean crearSala(Integer espacio, String tipo, Integer numero){
+    public Boolean crearSala(Integer filas, Integer num,String tipo,Integer numero){
         if(salas.length-cantidadSalas!=0){
             return false;
         }
-        salas[cantidadSalas]= new Sala(espacio,tipo,numero);
+        salas[cantidadSalas]= new Sala(filas,num,tipo,numero);
         return true;
     }
 

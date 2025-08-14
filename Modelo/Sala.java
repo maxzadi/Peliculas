@@ -6,11 +6,12 @@ public class Sala {
     public String tipo;
     public int numero;
 
-    public Sala(int filas, int num, String tipo){
+    public Sala(int filas, int num, String tipo, Integer numero){
         this.espacio=filas*num;
         this.espacioTotal=filas*num;
         this.tipo=tipo;
         this.asientos= new Asiento[filas][num];
+        this.numero=numero;
         for(Integer i=0;i<filas;i++){
             for(Integer j=0;j<num;j++){
 
