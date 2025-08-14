@@ -41,18 +41,37 @@ public class Sala {
         return numero;
     }
 
-    public boolean comprarAsientos(Integer cantidad){
-        if(espacio-cantidad<0){
-            return false;
+    public boolean comprarAsientos(int cantidad) {
+        if (cantidad > espacio) {
+            return false; 
         }
-        
-        while (cantidad>0 && (i+1)*(j+1)!=espacioTotal) {
-            if(asientos[i][j])
-            asientos[asientos.length-espacio].sentarse();
-            espacio-=1;
-            cantidad-=1;
+
+        int filas = asientos.length;
+        int columnas = asientos[0].length;
+
+        for (int i = 0; i < filas && cantidad > 0; i++) {
+            if (!asientos[i][0].ocupado()) {
+                for (int j = 0; j < columnas && cantidad > 0; j++) {
+                    if (!asientos[i][j].ocupado()) {
+                        asientos[i][j].sentarse();
+                        espacio--;
+                        cantidad--;
+                    }
+                }
+            }
+            
+            else if (!asientos[i][columnas - 1].ocupado()) {
+                for (int j = columnas - 1; j >= 0 && cantidad > 0; j--) {
+                    if (!asientos[i][j].ocupado()) {
+                        asientos[i][j].sentarse();
+                        espacio--;
+                        cantidad--;
+                    }
+                }
+            }
         }
-        return true;
+
+        return cantidad == 0; 
     }
 
 }

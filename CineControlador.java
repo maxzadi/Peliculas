@@ -1,17 +1,18 @@
 import Modelo.Sala;
+
+import java.util.ArrayList;
+
 import Modelo.Peliculas;
 
 public class CineControlador {
     public Sala[] salas;
     public Integer cantidadSalas;
-    public Integer cantidadPeliculas;
-    public Peliculas[] peliculas;
+    public Integer cantidadPeliculas=0;
+    public ArrayList<Peliculas> peliculas;
 
-    public CineControlador(Integer uno, Integer dos){
+    public CineControlador(Integer uno){
         this.cantidadSalas=uno;
         salas= new Sala[this.cantidadSalas];
-        this.cantidadPeliculas=dos;
-        peliculas= new Peliculas[this.cantidadPeliculas];
     }
 
     public Boolean crearSala(Integer filas, Integer num,String tipo,Integer numero){
@@ -23,10 +24,7 @@ public class CineControlador {
     }
 
     public Boolean crearPelicula(String nombre,String actores,String clasificacion,String director,Integer duracion){
-        if(peliculas.length-cantidadPeliculas!=0){
-            return false;
-        }
-        peliculas[cantidadPeliculas]= new Peliculas(nombre,actores,clasificacion,director,duracion);
+        peliculas.add( new Peliculas(nombre,actores,clasificacion,director,duracion));
         return true;
     }
 
@@ -40,7 +38,7 @@ public class CineControlador {
     public String verPeliculas(){
         String reporte="";
         for(Integer i=0;i<cantidadPeliculas;i++){
-            reporte+=i.toString()+". "+peliculas[i].nombre+"\n";
+            reporte+=i.toString()+". "+peliculas.get(i).nombre+"\n";
         }       
         return reporte;
     }

@@ -45,4 +45,8 @@ public class Asiento {
     public void cambiarEstado(String nuevoEstado) {
         this.estado = nuevoEstado;
     }
+
+    public Boolean ocupado(){
+        return ocupado;
+    }
 }

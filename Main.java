@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
  public static void main(String[] args){
     Scanner leer = new Scanner(System.in);
-    CineControlador cine= new CineControlador(10,5);
+    CineControlador cine= new CineControlador(10);
     Boolean valor=false;
     String reporte="";
 
