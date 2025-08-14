@@ -1,23 +1,22 @@
 package Modelo;
 public class Sala {
-    public Asiento[] asientos;
+    public Asiento[][] asientos;
     public int espacio;
+    public int espacioTotal;
     public String tipo;
     public int numero;
 
-    public Sala(int asientos, String tipo){
-        this.espacio=asientos;
+    public Sala(int filas, int num, String tipo){
+        this.espacio=filas*num;
+        this.espacioTotal=filas*num;
         this.tipo=tipo;
-        this.asientos= new Asiento[asientos];
-        for(Integer i=0;i<asientos;i++){
-            this.asientos[i]=new Asiento(i.toString(),false,"limpio");
-        }
-    }
+        this.asientos= new Asiento[filas][num];
+        for(Integer i=0;i<filas;i++){
+            for(Integer j=0;j<num;j++){
 
-    public Sala(int espacio, String tipo, int numero){
-        this.espacio=espacio;
-        this.tipo=tipo;
-        this.numero=numero;
+            this.asientos[i][j]=new Asiento(i.toString()+"-"+j.toString(),false,"limpio");
+            }
+        }
     }
 
     public int cantidadAsientos(){
@@ -45,7 +44,9 @@ public class Sala {
         if(espacio-cantidad<0){
             return false;
         }
-        while (cantidad>0) {
+        
+        while (cantidad>0 && (i+1)*(j+1)!=espacioTotal) {
+            if(asientos[i][j])
             asientos[asientos.length-espacio].sentarse();
             espacio-=1;
             cantidad-=1;

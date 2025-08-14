@@ -18,13 +18,15 @@ public class Main {
         Integer opcion=leer.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("\nIngresa el número de asientos de la nueva sala:");
-                Integer espacio=leer.nextInt();
+                System.out.println("\nIngresa el número de filas de asientos de la nueva sala:");
+                Integer filas=leer.nextInt();
+                System.out.println("\nIngresa el número asientos por fila de asientos de la nueva sala:");
+                Integer num=leer.nextInt();
                 System.out.println("Ingresa el tipo de sala:");
                 String tipo=leer.next();
                 System.out.println("Ingresa el número de sala:");
                 Integer numero=leer.nextInt();
-                valor=cine.crearSala(espacio,tipo,numero);
+                valor=cine.crearSala(filas,num,tipo,numero);
                 if(valor){
 
                     System.out.println("Sala "+numero+" creada!");

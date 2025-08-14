@@ -21,7 +21,6 @@ public class Asiento {
     public void sentarse() {
         this.ocupado = true;
         this.estado = "ocupado";
-        System.out.println("Una persona se ha sentado en el asiento " + codigo);
     }
 
     public void sentarse(String persona) {
